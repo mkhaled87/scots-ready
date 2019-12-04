@@ -1,0 +1,38 @@
+
+Controller synthesis for a DC DC boost converter to enforce a reach-and-stay 
+specification
+
+1. compile the dcdc.cc file
+
+  a) edit the Makefile and adjust the CUDDPATH to the location where the cudd library is installed.
+
+  b) now you should be able to compile the program simply by
+
+    $ make
+
+2. execute 
+
+  $./dcdc
+
+  which produces
+
+  ./dcdc_controller.bdd
+
+3. simulate the closed loop in Matlab 
+
+  a) you need to compile the mexfile first (see the readme in $(SCOTSROOT)/mfiles/mexfiles )
+
+  b) in Matlab add the path and run the simulation 
+
+   >> addpath(genpath('../../../mfiles'))
+   >> dcdc
+
+5. information on the example is found in
+
+- Girard, Antoine. "Controller synthesis for safety and reachability via
+  approximate bisimulation." Automatica 48.5 (2012): 947-953.
+
+- A. Girard, G. Pola, and P. Tabuada. “Approximately bisimilar symbolic models
+  for incrementally stable switched systems”. In: IEEE TAC 55.1 (2010), pp. 116–126.
+
+

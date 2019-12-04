@@ -1,0 +1,28 @@
+For Linux/Mac
+--------------
+To run simulations in matlab with SCOTS you need compile the mexfile
+
+1. set up the mex compiler in Matlab:
+
+  >> mex -setup C++
+
+2. edit the make file and adjust the variables
+
+  a) MATLABROOT
+  b) CUDDPATH
+
+3. in a terminal run
+
+  $ make
+
+
+
+For Windows
+--------------
+1. unpack the compressed file (cuddwin64/lib/CUDD.7z) the CUDD.lib file be in 
+the directory (cuddwin64/lib).
+
+2. From inside MATLAB while you are in this (mexfiles) directory:
+
+  >> mex -setup C++
+  >> makewin
