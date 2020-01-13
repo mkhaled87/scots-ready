@@ -33,6 +33,15 @@ Further details are found in the readme files in example directories and in the 
 
 For installing and running SCOTS on Windows, please refer to the [Windows installation help file](/installation_notes_windows.txt).
 
+## Quick Start
+
+Now, we test scots with one of the provided examples.
+Navigate, build and run the hscc16/vehicle1 example:
+
+    $ cd examples/hscc16/vehicle1
+    $ make
+    $ ./vehicle1
+
 ## Directory structure
 
 - **./bdd/**:
