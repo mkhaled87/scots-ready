@@ -19,9 +19,19 @@ To make full use of SCOTS, you may need to have MATLAB installed to be able to s
 
 SCOTS was originally developed to work in Linux and MacOS. However, we managed to make it work in Windows and included a small help to guide you [here](/installation_notes_windows.txt). SCOTS is known to work much slower in Windows.
 
-## Installation
+## Installation (Linux)
 
-First, we build the included CUDD library by navigating to SCOTS root folder and running the command:
+In most of the examples, we use the *g++* compiler and *clang++* compiler frontend. If you dont have them installed, please install them first.
+If you are using Ubuntu Linux, you may install the compiler and required libraries using the commands:
+
+    $ sudo apt-get install git build-essential gcc g++ clang
+    
+Then, clone this repisatory and move to its root:
+
+    $ git clone https://github.com/mkhaled87/scots-ready.git
+    $ cd scots-ready
+
+Now, we build the included CUDD library by running the command:
 
     $ make
 
@@ -31,7 +41,12 @@ SCOTS itself is a header only library. You only need to add SCOTS source directo
 
 Further details are found in the readme files in example directories and in the [manual](/manual/manual.pdf).
 
-For installing and running SCOTS on Windows, please refer to the [Windows installation help file](/installation_notes_windows.txt).
+## Installation (Windows)
+
+You may use Windows Subsystem For Linux and follow the same instructions before to run SCOTS.
+However, the MATLAB interface will not be supported.
+
+Another option is to use the provided [VisualStudio build project](cudd-3.0.0/cudd.vcxproj) provided with the CUDD library to build a static version of the library. After building, the static library will be loccacted in *cudd-3.0.0/lib*. You may then make your own VisualStudio projects from any example source code and link against the library.
 
 ## Quick Start
 
@@ -40,7 +55,7 @@ Navigate, build and run the hscc16/vehicle1 example:
 
     $ cd examples/hscc16/vehicle1
     $ make
-    $ ./vehicle1
+    $ ./vehicle
 
 ## Directory structure
 
