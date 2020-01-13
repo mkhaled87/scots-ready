@@ -1,9 +1,7 @@
-# SCOTS: Automated Synthesis of Symbolic Controllers for General Non-lineal Systems [CUDD-configured Version]
+# SCOTS: Automated Synthesis of Symbolic Controllers for General Non-lineal Systems [static CUDD-lib Version]
 
 **SCOTS** is a C++ tool (with a small Matlab interface) to synthesize controller for
 possibly perturbed nonlinear control systems with respect to safety and reachability specifications.
-
-Please read the manual in the manual directory ./manual/manual.pdf
 
 This version is the same version of SCOTS as in here but with the CUDD library included and pre-configured for ease of installation and use.
 
