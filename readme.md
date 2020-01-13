@@ -3,7 +3,10 @@
 **SCOTS** is a C++ tool (with a small Matlab interface) to synthesize controller for
 possibly perturbed nonlinear control systems with respect to safety and reachability specifications.
 
-This version is the same version of SCOTS as in here but with the CUDD library included and pre-configured for ease of installation and use.
+This version of SCOTS is forked from the [version in LRZ-Gitlab](https://gitlab.lrz.de/hcs/scots) with the following modifications:
+1- The CUDD library is included pre-configured for ease of installation and use,
+2- The CUDD library is used as a static-link library, and
+3- Some minor fixes are applied to the CUDD libtary code and SCOT's code.
 
 ## Requirements
 
