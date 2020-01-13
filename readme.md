@@ -46,7 +46,7 @@ Further details are found in the readme files in example directories and in the 
 You may use Windows Subsystem For Linux and follow the same instructions before to run SCOTS.
 However, the MATLAB interface will not be supported.
 
-Another option is to use the provided [VisualStudio build project](cudd-3.0.0/cudd.vcxproj) provided with the CUDD library to build a static version of the library. After building, the static library will be loccacted in *cudd-3.0.0/lib*. You may then make your own VisualStudio projects from any example source code and link against the library.
+Another option is to use the provided [VisualStudio build project](cudd-3.0.0/cudd.sln) provided with the CUDD library to build a static version of the library. After building, the static library will be loccacted in *cudd-3.0.0/lib*. You may then make your own VisualStudio projects from any example source code and link against the library.
 
 ## Quick Start
 
