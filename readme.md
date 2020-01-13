@@ -4,7 +4,8 @@
 possibly perturbed nonlinear control systems with respect to safety and reachability specifications.
 
 This version of SCOTS is forked from the [version in LRZ-Gitlab](https://gitlab.lrz.de/hcs/scots) with the following modifications:
-    1- The CUDD library is included pre-configured for ease of installation and use,    
+
+    1- The CUDD library is included pre-configured for ease of installation and use,        
     2- The CUDD library is used as a static-link library, and
     3- Some minor fixes are applied to the CUDD libtary code and SCOT's code.
 
