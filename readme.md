@@ -43,10 +43,22 @@ Further details are found in the readme files in example directories and in the 
 
 ## Installation (Windows)
 
-You may use Windows Subsystem For Linux and follow the same instructions before to run SCOTS.
-However, the MATLAB interface will not be supported.
+You may use [Windows Subsystem For Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and follow the same instructions before to run SCOTS. However, the MATLAB interface is not be supported.
 
-Another option is to use the provided [VisualStudio build project](cudd-3.0.0/cudd.vcxproj) provided with the CUDD library to build a static version of the library. After building, the static library will be loccacted in *cudd-3.0.0/lib*. You may then make your own VisualStudio projects from any example source code and link against the library.
+Another option is to use the provided [VisualStudio build project](cudd-3.0.0/cudd.vcxproj) provided with the CUDD library to build a static version of the library. Make sure to use the *Relase* build configuration. After building, the static library will be loccacted in *cudd-3.0.0/lib*. You may then make your own VisualStudio projects from any example source code and link against the library.
+
+## MATLAB Interface Installation
+
+If you don't have matlab or plan to use it later, skip this section for now.
+The matlab interface allows loading the output files of SCOTS inside matlab and simulating the closed loop of the control system.
+
+Open MATLAB and navigate to the folder *mfiles*.
+Use the command window of MATLAB and run the command:
+
+	>> Install
+
+Then, add the *mfiles* folder and all subfolders to MATLAB's path.
+This should work in Linux, MacOS and Windows (not WSL).
 
 ## Quick Start
 
@@ -56,6 +68,14 @@ Navigate, build and run the hscc16/vehicle1 example:
     $ cd examples/hscc16/vehicle1
     $ make
     $ ./vehicle
+	
+Now, form inside MATLAB, navigate to the examples folder *examples/hscc16/vehicle1* and simulate the closed loop using the command:
+
+	>> vehicle
+
+This should simulate the colsed loop of the autonomous vehicle and show a result similar to the following:
+
+![vehicle_sim_out](manual/sim_vehicle.png?raw=true)
 
 ## Directory structure
 

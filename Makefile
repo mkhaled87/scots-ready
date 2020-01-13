@@ -21,6 +21,7 @@ clean:
 	rm -f ./bin/*.dot
 	rm -f ./bin/*.dd
 	rm -f ./bin/*.tmp
+	rm -f ./mfiles/mexfiles/*.mex*
 	rm -f ./include/*.gch
 	for dir in $(CLEAR_SUBDIRS); do $(MAKE) clean -C $$dir $@; done
 	find . -name '~*' -delete
