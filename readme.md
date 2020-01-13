@@ -19,7 +19,7 @@ To make full use of SCOTS, you may need to have MATLAB installed to be able to s
 
 SCOTS was originally developed to work in Linux and MacOS. However, we managed to make it work in Windows and included a small help to guide you [here](/installation_notes_windows.txt). SCOTS is known to work much slower in Windows.
 
-## Installation (Linux)
+## Installation (Linux/MacOS)
 
 In most of the examples, we use the *g++* compiler and *clang++* compiler frontend. If you dont have them installed, please install them first.
 If you are using Ubuntu Linux, you may install the compiler and required libraries using the commands:
