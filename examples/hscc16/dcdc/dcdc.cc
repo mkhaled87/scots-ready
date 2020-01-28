@@ -175,7 +175,7 @@ int main() {
   /* contains the state space grid points and associated inputs */
   BDD C; 
   tt.tic();
-  C = fp.safe(Z);
+  C = fp.safe(Z, 1);
   tt.toc();
 
   /****************************************************************************/

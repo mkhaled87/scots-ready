@@ -17,7 +17,7 @@ close all
 
 %% simulation
 % initial state
-x0=[1.2 5.6];
+x0=[1.35 5.7];
 
 % load the symbolic set containing the controller
 controller=SymbolicSet('dcdc_controller.bdd');
@@ -25,11 +25,11 @@ controller=SymbolicSet('dcdc_controller.bdd');
 y=x0;
 v=[];
 T=400; 
-for t=1:T/0.5
+for t=1:T/0.05
   
   u=controller.getInputs(y(end,:));
   v=[v; u(1,:)];
-  [t x]=ode45(@unicycle_ode,[0 .5], y(end,:), odeset('abstol',1e-4,'reltol',1e-4),u(1,:));
+  [t x]=ode45(@unicycle_ode,[0 .05], y(end,:), odeset('abstol',1e-4,'reltol',1e-4),u(1,:));
 
   y=[y; x(end,:)];
 end

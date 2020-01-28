@@ -17,8 +17,7 @@ close all
 
 %% simulation
 % initial state
-x0=[1.2 5.5];
-x0=[.7 5.4];
+x0=[0.7 5.4];
 
 % load the symbolic set containing the controller
 C=SymbolicSet('dcdc_controller.bdd');
