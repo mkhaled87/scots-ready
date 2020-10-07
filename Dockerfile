@@ -14,7 +14,7 @@ RUN apt-get -qq update \
 # install required libs/tools
 RUN apt-get -qq install -y wget git unzip build-essential gcc g++ clang
 
-# install scots-ready
+# install scots-ready (latest)
 RUN git clone https://github.com/mkhaled87/scots-ready.git ./scots/ \
 	&& cd scots \
 	&& make \
@@ -23,7 +23,6 @@ RUN git clone https://github.com/mkhaled87/scots-ready.git ./scots/ \
 	&& cp /scots/cudd-3.0.0/*.h* /opt/local/include/ \
 	&& cp /scots/cudd-3.0.0/libcudd.a /opt/local/lib/
 	
-# install BDD2Implement
+
+# install BDD2Implement (latest)
 RUN git clone https://github.com/mkhaled87/BDD2Implement
-
-
