@@ -10,18 +10,6 @@ This version of SCOTS is forked from the [version in LRZ-Gitlab](https://gitlab.
 - A Windows VisualSudio build project is provided for the CUDD library, and
 - Some minor fixes are applied to the CUDD libtary code and SCOT's code.
 
-## Requirements
-
-SCOTS requires only a modern C++ development environment where you can compile C++ (v11) source codes.
-All other requirements are included with SCOTS.
-
-To make full use of SCOTS, you may need to have MATLAB installed to be able to simulate the synthesized controllers using the provided MATLAB interface in [/mfiles](/mfiles).
-
-SCOTS was originally developed to work in Linux and MacOS. 
-However, we provide a guide below on how to install it also in Windows. 
-SCOTS is known to work much slower in Windows.
-
-
 ## Installation using Docker
 Here, we assume you will be using a Linux or MacOS machine. Commands will be slightly different on Windows if you use Windows PowerShell.
 First, make sure you have docker installed (see Docker installation guide for: [MacOS](https://docs.docker.com/docker-for-mac/install/), [Ubuntu Linux](https://docs.docker.com/engine/install/ubuntu/) or [Windows](https://docs.docker.com/docker-for-windows/install/)). Also, make sure to [configure Docker to use sufficient resources](https://docs.docker.com/config/containers/resource_constraints/) (e.g., enough CPU cores). Otherwise, OmegaThreads will run slower than expected.
@@ -57,14 +45,26 @@ You may navigate to it:
 
 Now, you may continue to the **Quick Start** section below to run a simple examnple.
 
-## Installation (Linux/MacOS)
+## Installation (non Docker)
 
-In most of the examples, we use the *g++* compiler and *clang++* compiler frontend. If you dont have them installed, please install them first.
+SCOTS requires only a modern C++ development environment where you can compile C++ (v11) source codes.
+All other requirements are included with SCOTS.
+
+To make full use of SCOTS, you may need to have MATLAB installed to be able to simulate the synthesized controllers using the provided MATLAB interface in [/mfiles](/mfiles).
+
+SCOTS was originally developed to work in Linux and MacOS. 
+However, we provide a small guide below on how to install it also in Windows. 
+SCOTS is known to work much slower in Windows.
+
+### Installation using Linux/MacOS
+
+We use the *g++* compiler and *clang++* compiler frontend. If you dont have them installed, please install them first.
 If you are using Ubuntu Linux, you may install the compiler and required libraries using the commands:
 
     $ sudo apt-get install git build-essential gcc g++ clang
     
-Then, clone this repisatory and move to its root:
+If you howver using MacOS, installing XCode frorm Apple Store will be enough.
+Now, clone this repisatory and move to its root:
 
     $ git clone https://github.com/mkhaled87/scots-ready.git
     $ cd scots-ready
@@ -75,11 +75,7 @@ Now, we build the included CUDD library by running the command:
 
 This will build the included CUDD library as a static-link library.
 
-SCOTS itself is a header only library. You only need to add SCOTS source directory to the include directory in the compiler command when you work with SCOTS. However, SCOTS depends on the CUDD library to represent the data structures used in SCOTS.
-
-Further details are found in the readme files in example directories and in the [manual](/manual/manual.pdf).
-
-## Installation (Windows)
+### Installation using (Windows)
 
 You may use [Windows Subsystem For Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and follow the same instructions before to run SCOTS. However, the MATLAB interface is not be supported.
 
