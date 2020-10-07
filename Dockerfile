@@ -15,7 +15,7 @@ RUN apt-get -qq update \
 RUN apt-get -qq install -y wget git unzip build-essential gcc g++ clang
 
 # install scots-ready
-RUN git clone https://github.com/mkhaled87/scots-ready.git \
+RUN git clone https://github.com/mkhaled87/scots-ready.git ./scots/ \
 	&& cd scots-ready \
 	&& make
 
