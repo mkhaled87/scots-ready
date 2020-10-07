@@ -7,8 +7,9 @@ This version of SCOTS is forked from the [version in LRZ-Gitlab](https://gitlab.
 
 - The CUDD library is included pre-configured for ease of installation and use,        
 - The CUDD library is used as a static-link library,
-- A Windows VisualSudio build project is provided for the CUDD library, and
-- Some minor fixes are applied to the CUDD libtary code and SCOT's code.
+- A Windows VisualSudio build project is provided for the CUDD library,
+- Some minor fixes are applied to the CUDD libtary code and SCOT's code, and 
+- a Docker installtion with the [BDDImplement](https://github.com/mkhaled87/BDD2Implement) tool included.
 
 ## Installation using Docker
 Here, we assume you will be using a Linux or MacOS machine. Commands will be slightly different on Windows if you use Windows PowerShell.
