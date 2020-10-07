@@ -17,7 +17,45 @@ All other requirements are included with SCOTS.
 
 To make full use of SCOTS, you may need to have MATLAB installed to be able to simulate the synthesized controllers using the provided MATLAB interface in [/mfiles](/mfiles).
 
-SCOTS was originally developed to work in Linux and MacOS. However, we managed to make it work in Windows and included a small help to guide you [here](/installation_notes_windows.txt). SCOTS is known to work much slower in Windows.
+SCOTS was originally developed to work in Linux and MacOS. 
+However, we provide a guide below on how to install it also in Windows. 
+SCOTS is known to work much slower in Windows.
+
+
+## Installation using Docker
+Here, we assume you will be using a Linux or MacOS machine. Commands will be slightly different on Windows if you use Windows PowerShell.
+First, make sure you have docker installed (see Docker installation guide for: [MacOS](https://docs.docker.com/docker-for-mac/install/), [Ubuntu Linux](https://docs.docker.com/engine/install/ubuntu/) or [Windows](https://docs.docker.com/docker-for-windows/install/)). Also, make sure to [configure Docker to use sufficient resources](https://docs.docker.com/config/containers/resource_constraints/) (e.g., enough CPU cores). Otherwise, OmegaThreads will run slower than expected.
+
+Download the Dockerfile:
+``` bash
+$ mkdir OmegaThreads
+$ cd OmegaThreads
+$ curl https://raw.githubusercontent.com/mkhaled87/scots-ready/master/Dockerfile -o Dockerfile
+```    
+
+Build the Docker container (don't forget the DOT at the end):
+``` bash
+$ docker build -t scots/latest .
+```    
+The building process will take proximately 15 minutes. 
+During the build, you may recieve some red-colored messages.
+They do not indicate errors, unless you recieve an explicit red-colored error message.
+Once done, run/enter the image's interactive shell:
+
+``` bash
+$ docker run -it -v ~/docker_shared:/docker_shared scots/latest
+```
+
+Note that by the previous command, we made a pipe between host and the container (this part: *-v ~/docker_shared:/docker_shared*) which will later you to move files (e.g., the synthesized controller) from the container to the host.
+
+Now SCOTS is installed in (**/scots-ready/**).
+You may navigate to it:
+
+``` bash
+/# cd pFaces-OmegaThreads
+```
+
+Now, you may continue to the **Quick Start** section below to run a simple examnple.
 
 ## Installation (Linux/MacOS)
 
@@ -69,6 +107,9 @@ Navigate, build and run the hscc16/vehicle1 example:
     $ make
     $ ./vehicle
 	
+If you are using Docker, you are limited to the previous step where you generated the controller.
+A simulation using MATLAB from inside Docker is currently not supportef.
+Continue if you installed SCOTS directly not using Docker.
 Now, form inside MATLAB, navigate to the examples folder *examples/hscc16/vehicle1* and simulate the closed loop using the command:
 
 	>> vehicle
