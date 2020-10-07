@@ -40,7 +40,7 @@ Now SCOTS is installed in (**/scots-ready/**).
 You may navigate to it:
 
 ``` bash
-/# cd pFaces-OmegaThreads
+/# cd scots
 ```
 
 Now, you may continue to the **Quick Start** section below to run a simple examnple.
@@ -66,8 +66,8 @@ If you are using Ubuntu Linux, you may install the compiler and required librari
 If you howver using MacOS, installing XCode frorm Apple Store will be enough.
 Now, clone this repisatory and move to its root:
 
-    $ git clone https://github.com/mkhaled87/scots-ready.git
-    $ cd scots-ready
+    $ git clone https://github.com/mkhaled87/scots-ready.git ./scots
+    $ cd scots
 
 Now, we build the included CUDD library by running the command:
 
