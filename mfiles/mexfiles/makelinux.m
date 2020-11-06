@@ -11,20 +11,13 @@ clc;
 disp('Building the MATLAB interface for Linux/Mac ... ');
 
 
-% the CUDD
-cuddProjPath = fullfile('..','..','cudd-3.0.0');
-cuddIncPath =  fullfile(cuddProjPath);
-cuddLibPath =  fullfile(cuddProjPath, 'lib');
-linkCuddPath = ['-L' cuddLibPath];
-linkCudd = '-lcudd';
-
-% path of includes
+% paths of includes
+cudd_path = fullfile('..','..','cudd-3.0.0');
 ipath_bdd  = ['-I' fullfile('..','..','bdd')];
-ipath_cudd = ['-I' cuddIncPath];
+ipath_cudd = ['-I' cudd_path];
 
-	
-mex('-v',ipath_bdd, ipath_cudd, linkCuddPath,  linkCudd, 'mexSymbolicSet.cc')	
-
+% build all (including the CUDD) and link inside one file
+mex('-v', ipath_bdd, ipath_cudd, 'mexSymbolicSet.cc', fullfile(cudd_path, '*.cc'), fullfile(cudd_path, '*.c'))
 
 clear all;
 
