@@ -15,6 +15,7 @@ classdef SymbolicSet < handle
     project   % optional: project the SymbolicSet onto the dimensions specified in the array project
   end
   methods 
+      
     function obj=SymbolicSet(filename, varargin)
     % the constructor opens the file and reads all the information about
     % the SymbolicSet
@@ -43,10 +44,12 @@ classdef SymbolicSet < handle
         obj.project=0;
       end
     end
+    
     function disp(obj)
       disp(['Matlab object to access the points cointained in the Symbolic Set stored in ', obj.filename])
       disp(' ')
     end
+    
     function points=get.points(obj)
     % read the grid points from file
     % optional projection indices
@@ -68,6 +71,7 @@ classdef SymbolicSet < handle
         end
       end
     end
+    
     function eta=get.eta(obj)
       if obj.eta~=0
         eta=obj.eta;
@@ -75,6 +79,7 @@ classdef SymbolicSet < handle
         error(['eta is not associated with the Symbolic Set stored in ',obj.filename]);
       end
     end
+    
     function first=get.first(obj)
       if ~isempty(obj.first)
         first=obj.first;
@@ -82,6 +87,7 @@ classdef SymbolicSet < handle
         error(['No firstGridPoint associated with the symbolic set stored in ',obj.filename]);
       end
     end
+    
     function last=get.last(obj)
       if ~isempty(obj.last)
         last=obj.last;
@@ -89,6 +95,7 @@ classdef SymbolicSet < handle
         error(['No firstGridPoint associated with the symbolic set stored in ',obj.filename]);
       end
     end
+    
     function u=getInputs(obj,x)
       x=x(:);
       idx=1:length(x);
@@ -97,6 +104,7 @@ classdef SymbolicSet < handle
         error(['The state ', mat2str(x(:)') ,' is not in the domain of the controller stored in:',obj.filename]);
       end
     end
+    
     function out = isElement(obj,x)
       x=x(:);
       if (mexSymbolicSet(obj.filename,'checkstate',x))
@@ -105,6 +113,7 @@ classdef SymbolicSet < handle
         out=0;
       end
     end
+    
     function u=setValuedMap(obj,x,varargin)
       x=x(:);
       if(isempty(varargin))
@@ -124,6 +133,7 @@ classdef SymbolicSet < handle
         error(['The state is not in the domain of the SymbolicSet stored in:',obj.filename]);
       end
     end
+    
     function plot(obj,varargin)
       if(obj.points==0)
         error(['No grid points stored to be plotted. Did you run set.points ?']);
@@ -140,6 +150,7 @@ classdef SymbolicSet < handle
         disp('plot function is supported for 1, 2 and 3 dimensions only');
       end
     end
+    
     function plotCells(obj,varargin)
       if(obj.points==0)
         error(['No grid points stored to be plotted. Did you run set.points ?']);
