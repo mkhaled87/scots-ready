@@ -1140,7 +1140,17 @@ public:
       std::vector<double> v(coind.size());
       for(size_t i=0; i<coind.size(); i++)
         v[i]=element[coind[i]];
-      image.push_back(v);
+
+      // Mkhaled @ 27.04.2021: fix the side effect of extra contorl inputs 
+      // for states in the controller that provide all possible inputs.
+      // sol: test the element to make sure it is within the bound
+      bool element_accepted = true;
+      for(size_t i=0; i<coind.size(); i++)
+        if(v[i] > lastGridPoint_[coind[i]])
+          element_accepted = false;
+      
+      if (element_accepted)
+        image.push_back(v);
     }
     delete[] element;
     return image;
