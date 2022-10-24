@@ -17,8 +17,8 @@ First, make sure you have docker installed (see Docker installation guide for: [
 
 Download the Dockerfile:
 ``` bash
-$ mkdir OmegaThreads
-$ cd OmegaThreads
+$ mkdir scots-ready
+$ cd scots-ready
 $ curl https://raw.githubusercontent.com/mkhaled87/scots-ready/master/Dockerfile -o Dockerfile
 ```    
 
