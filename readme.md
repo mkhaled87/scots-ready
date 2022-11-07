@@ -92,7 +92,7 @@ Use the command window of MATLAB and run the command:
 
 	>> Install
 
-Then, add the *mfiles* folder and all subfolders to MATLAB's path.
+This all build/install the MATLAB interface and will also add the *mfiles* folder and all subfolders to MATLAB's path.
 This should work in Linux, MacOS and Windows (not WSL).
 
 ## Quick Start
