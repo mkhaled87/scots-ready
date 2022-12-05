@@ -1145,9 +1145,12 @@ public:
       // for states in the controller that provide all possible inputs.
       // sol: test the element to make sure it is within the bound
       bool element_accepted = true;
-      for(size_t i=0; i<coind.size(); i++)
-        if(v[i] > lastGridPoint_[coind[i]])
+      for(size_t i=0; i<coind.size(); i++){
+        auto co_i = coind[i];
+        if ( v[i]>(lastGridPoint_[co_i]+eta_[co_i]/2) || v[i]<(firstGridPoint_[co_i]-eta_[co_i]/2) ){
           element_accepted = false;
+        }
+      }
       
       if (element_accepted)
         image.push_back(v);
