@@ -141,6 +141,21 @@ This should simulate the colsed loop of the autonomous vehicle and show a result
 
     mex-file to read the C++ output from file.
 
+## Troubleshooting
+
+Following the next steps can help you get your example through out the commom problems users face when woring with SCOTS:
+
+1. First simulate the dynamics only using (MATLAB + the ODE) to get an estimate about the bounds of the state/input sets that are needed to solve the problem.
+2. Fix the bounds of the state/input according to step 1: give space to the dynamics to move (state space bounds) and to the controller to be able to achieve the specs (the input bound).
+3. Make sure your target/obstacle/safe sets are inside the state domain.
+4. Make sure the growth-bound is derived correctly: you may start with (r = 0, i.e. assuming a deterministic system where for each input and state there is only one post state) to test the feasibility of the problem, and then invest time finding the 
+5. Make sure the same exact model (same math formulation) is used in C++ and MATLAB (significant differences can arise from the order the floating-point operations are computed).
+6. Compile/Run your example.
+7. In MATLAB simulation, make sure the initial state (x0) is (1) in a location that can possibly reach the target if you have REACH (or REACH-AVOID) the specs (e.g., don’t put the initial state inside an obstacle), or (2) inside the safe set in case you have SAFE specs.
+8. Run the MATLAB simulation.
+![image](https://user-images.githubusercontent.com/13943671/206842850-cd463c23-2766-4e5d-89ff-098eae001f4f.png)
+
+
 ## Support
 
 Please report any problems/bugs you face while installing and running SCOTS to [Mahmoud Khaled](http://hyconsys.com/members/mkhaled/).
