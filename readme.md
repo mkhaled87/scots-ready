@@ -153,7 +153,6 @@ Following the next steps can help you get your example through out the commom pr
 6. Compile/Run your example.
 7. In MATLAB simulation, make sure the initial state (x0) is (1) in a location that can possibly reach the target if you have REACH (or REACH-AVOID) the specs (e.g., don’t put the initial state inside an obstacle), or (2) inside the safe set in case you have SAFE specs.
 8. Run the MATLAB simulation.
-![image](https://user-images.githubusercontent.com/13943671/206842850-cd463c23-2766-4e5d-89ff-098eae001f4f.png)
 
 
 ## Support
