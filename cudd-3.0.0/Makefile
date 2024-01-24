@@ -246,6 +246,7 @@ $(LIB_CUDD):	$(LIB_OBJ_FILES)
 	rm -r $(LIB_DIR)
 	mkdir $(LIB_DIR)
 	cp $(LIB_CUDD) $(LIB_DIR)
+	touch lib/.gitkeep
 
 $(LIB_OBJ_FILES):	$(LIB_HDR_FILES)
 
@@ -254,7 +255,7 @@ clean:
 	rm -f libcudd*.a
 	rm -f datasizes.h
 	rm -f lib/*.*
-	touch lib/.ignore
+	touch lib/.gitkeep
 	rm -f -r Debug
 	rm -f -r Release
 	rm -f -r x64
