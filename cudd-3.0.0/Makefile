@@ -55,6 +55,14 @@ AR		= ar
 AR_FLAGS	= -r
 RANLIB		= /bin/true
 RANLIB_FLAGS	= 
+else ifeq ($(findstring MINGW, $(OS)), MINGW)
+#-----
+# MSYS2 MINGW: same as Linux
+#-----
+AR		= ar
+AR_FLAGS	= -r
+RANLIB		= /bin/true
+RANLIB_FLAGS	=
 else ifeq ($(OS),Cygwin)
 #-----
 # Cygwin: same as Linux
